@@ -66,8 +66,14 @@ class HTMLtag {
             }
         }
     }
+    public function insert2(HTMLtag $obj){
+        $this->insert(clone $obj);
+    }
     public function inserted(HTMLtag $obj){
         $obj->insert($this);
+    }
+    public function inserted2(HTMLtag $obj){
+        $obj->insert2($this);
     }
 
     /* Delete functions */
@@ -324,12 +330,6 @@ function analysis(string $code, HTMLtag $host = null){
         if ($code[0] === '<'){
             if ($temp !== ""){
                 if (trim($temp) !== ""){
-                    /* if ($temp[0] === " "){
-                        $temp = substr($temp, 1);
-                    }
-                    if ($temp[strlen($temp) - 1] === " "){
-                        $temp = substr($temp, -1);
-                    } */
                     $host->insert($temp);
                 }
                 $temp = "";

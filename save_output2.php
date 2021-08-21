@@ -1,6 +1,4 @@
 <?php
-require_once("checkfunc.php");
-
 function read_file(string $filename, int $byte = -1):string{
     $handle = fopen($filename, "r");
     if ($byte < 0){
