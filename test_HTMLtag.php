@@ -1,5 +1,5 @@
 <?php
-require_once("class\HTMLtag.php");
+require_once("HTMLtag.php");
 require_once("checkfunc.php");
 
 $master = new HTMLtag();
